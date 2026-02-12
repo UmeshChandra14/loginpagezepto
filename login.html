@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zepto Login</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: linear-gradient(135deg,#1a0033,#7c3aed);
+}
+
+/* Hide checkbox */
+#toggle{
+    display:none;
+}
+
+.container{
+    width:400px;
+    padding:40px;
+    background:#0f0f1a;
+    border-radius:20px;
+    box-shadow: 0 0 25px rgba(124,58,237,0.6);
+    color:white;
+    position:relative;
+    overflow:hidden;
+}
+
+.logo{
+    text-align:center;
+    font-size:40px;
+    font-weight:700;
+    color:#7c3aed;
+    margin-bottom:10px;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:25px;
+    font-weight:500;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:6px;
+    font-size:14px;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    border-radius:10px;
+    border:2px solid #7c3aed;
+    background:#1a1a2e;
+    color:white;
+    outline:none;
+    margin-bottom:10px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:30px;
+    font-size:16px;
+    cursor:pointer;
+    margin-top:10px;
+    background:#7c3aed;
+    color:white;
+    box-shadow:0 0 15px #7c3aed;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.03);
+}
+
+.switch{
+    text-align:center;
+    margin-top:15px;
+    font-size:14px;
+    cursor:pointer;
+    color:#c4b5fd;
+}
+
+/* Forms */
+.form{
+    display:none;
+}
+
+/* Default show login */
+#toggle:not(:checked) ~ .container .login{
+    display:block;
+}
+
+/* When checked show signup */
+#toggle:checked ~ .container .signup{
+    display:block;
+}
+</style>
+</head>
+
+<body>
+
+<input type="checkbox" id="toggle">
+
+<div class="container">
+    <div class="logo">zepto</div>
+
+    <!-- LOGIN FORM -->
+    <div class="form login">
+        <h2>Login</h2>
+
+        <label>Email or Phone</label>
+        <input type="text" placeholder="Enter your Email or Phone">
+
+        <label>Password</label>
+        <input type="password" placeholder="Enter your Password">
+
+        <button>Sign In</button>
+
+        <label for="toggle" class="switch">
+            New to Zepto? Create Account
+        </label>
+    </div>
+
+    <!-- SIGNUP FORM -->
+    <div class="form signup">
+        <h2>Create Account</h2>
+
+        <label>Full Name</label>
+        <input type="text" placeholder="Enter your Full Name">
+
+        <label>Email</label>
+        <input type="email" placeholder="Enter your Email">
+
+        <label>Password</label>
+        <input type="password" placeholder="Create Password">
+
+        <button>Register</button>
+
+        <label for="toggle" class="switch">
+            Already have an account? Sign In
+        </label>
+    </div>
+
+</div>
+
+</body>
+</html>
